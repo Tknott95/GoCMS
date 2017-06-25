@@ -4,4 +4,4 @@
 ##### chmod 755 ./run.sh
 ##### ./run.sh
 
-###### EMJOY! - tk@trevorknott.io 
+###### ENJOY! - tk@trevorknott.io 
