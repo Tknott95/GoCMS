@@ -1,17 +1,17 @@
 {{ define "page" }}
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{ .Title }}</title>
-  </head>
-  <body>
-    <h1>{{ .Title }}</h1>
-    <p>{{ .Content }}</p>
-    {{ if .Posts }}
-      {{ range .Posts }}
-       {{ template "post" . }}
-      {{ end }}
+<head>
+  <title>{{ .Title }}</title>
+</head>
+<body>
+  <h1>{{ .Title }}</h1>
+  <p>{{ .Content }}</p>
+  {{ if .Posts }}
+    {{ range .Posts }}
+      {{ template "post" . }}
     {{ end }}
-  </body>
+  {{ end }}
+</body>
 </html>
-{{end}}
+{{ end }}

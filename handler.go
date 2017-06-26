@@ -39,9 +39,9 @@ func HandleNew(w http.ResponseWriter, req *http.Request) {
 		Tmpl.ExecuteTemplate(w, "new", nil)
 
 	case "POST":
-		title := req.FormValue("post-title")
-		content := req.FormValue("post-content")
-		contentType := req.FormValue("post-content-type")
+		title := req.FormValue("title")
+		content := req.FormValue("content")
+		contentType := req.FormValue("content-type")
 		req.ParseForm()
 
 		if contentType == "page" {
@@ -52,7 +52,7 @@ func HandleNew(w http.ResponseWriter, req *http.Request) {
 			return
 		}
 	default:
-		http.Error(w, "method not supported: "*req.Method, http.StatusMethodNotAllowed)
+		http.Error(w, "method not supported: "+req.Method, http.StatusMethodNotAllowed)
 	}
 }
 

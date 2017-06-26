@@ -1,16 +1,17 @@
 package main
 
 import (
-	"os"
+	"net/http"
 
 	"github.com/tknott95/cms"
 )
 
 func main() {
-	p := &cms.Page{
-		Title:   "Hello, world!",
-		Content: "this is the body of our webpage",
-	}
-
-	cms.Tmpl.ExecuteTemplate(os.Stdout, "index", p)
+	http.HandleFunc("/", cms.ServeIndex)
+	http.HandleFunc("/new", cms.HandleNew)
+	http.ListenAndServe(":8080", nil)
+	// p := &cms.Page{
+	// 	Title:   "Hello, world!",
+	// 	Content: "this is the body of our webpage",
+	// }
 }
