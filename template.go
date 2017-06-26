@@ -9,12 +9,14 @@ import (
 var Tmpl = template.Must(template.ParseGlob("../templates/*"))
 
 type Page struct {
+	ID      int
 	Title   string
 	Content string
 	Posts   []*Post
 }
 
 type Post struct {
+	ID            int
 	Title         string
 	Content       string
 	DatePublished time.Time
@@ -22,6 +24,7 @@ type Post struct {
 }
 
 type Comment struct {
+	ID            int
 	Author        string
 	Comment       string
 	DatePublished time.Time
